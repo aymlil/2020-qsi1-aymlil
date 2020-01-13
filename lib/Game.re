@@ -93,14 +93,14 @@ let string_of_player = (player) =>
   switch player {
   | PlayerOne => "Player One"
   | PlayerTwo => "Player Two" 
-  }
+}
 
 let string_of_point = (point) =>
   switch point {
   | Love => "Love (0)"
   | Fifteen => "Fifteen (15)"
   | Thirty => "Thirty (30)"
-  }
+}
 
 let string_of_score = (score) =>
   switch score {
@@ -109,4 +109,4 @@ let string_of_score = (score) =>
   | Deuce => "Deuce !"
   | Advantage(p) => "Advantage " ++ string_of_player(p) ++ " !"
   | Game(p) => "Game " ++ string_of_player(p) ++ " !"
-  };
+};
