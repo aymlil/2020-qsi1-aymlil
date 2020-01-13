@@ -88,3 +88,16 @@ switch current {
 };
 
 let newGame = Points({playerOne: Love, playerTwo: Love});
+
+let string_of_player = (player) =>
+  switch player {
+  | PlayerOne => "Player One"
+  | PlayerTwo => "Player Two" 
+  }
+
+let string_of_point = (point) =>
+  switch point {
+  | Love => "Love (0)"
+  | Fifteen => "Fifteen (15)"
+  | Thirty => "Thirty (30)"
+  }
