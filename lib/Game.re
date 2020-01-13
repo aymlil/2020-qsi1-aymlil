@@ -101,3 +101,12 @@ let string_of_point = (point) =>
   | Fifteen => "Fifteen (15)"
   | Thirty => "Thirty (30)"
   }
+
+let string_of_score = (score) =>
+  switch score {
+  | Points(pData) => string_of_player(PlayerOne) ++ ":" ++ string_of_point(pData.playerOne) ++ " ; " ++ string_of_player(PlayerTwo) ++ ":" ++ string_of_point(pData.playerTwo)
+  | Forty(fData) => "Forty (40) for " ++ string_of_player(fData.player) ++ ", " ++ string_of_player(other(fData.player)) ++ " get " ++ string_of_point(fData.otherPlayerPoint)
+  | Deuce => "Deuce !"
+  | Advantage(p) => "Advantage " ++ string_of_player(p) ++ " !"
+  | Game(p) => "Game " ++ string_of_player(p) ++ " !"
+  };

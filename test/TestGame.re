@@ -59,3 +59,38 @@ describe("Test Game Winning",({test}) => {
   });
 });
 
+describe("Test String_of_*", ({test}) => {
+  test("string_of_player return player one", ({expect}) => {
+    expect.equal(string_of_player(PlayerOne),"Player One")
+  });
+  test("string_of_player return player two", ({expect}) => {
+    expect.equal(string_of_player(PlayerTwo),"Player Two")
+  });
+  test("string_of_point return Love", ({expect}) => {
+    expect.equal(string_of_point(Love),"Love (0)")
+  });
+  test("string_of_point return Fifteen", ({expect}) => {
+    expect.equal(string_of_point(Fifteen),"Fifteen (15)")
+  });
+  test("string_of_point return Thirty", ({expect}) => {
+    expect.equal(string_of_point(Thirty),"Thirty (30)")
+  });
+  test("string_of_score for Point return the score for 0-15", ({expect}) => {
+    let loveFifteen = {playerOne: Love, playerTwo: Fifteen}
+    expect.equal(string_of_score(Points(loveFifteen)),"Player One:Love (0) ; Player Two:Fifteen (15)")
+  });
+  test("string_of_score for Forty return the score for 40-30", ({expect}) => {
+    let fortyThirty = {player : PlayerOne, otherPlayerPoint : Thirty}
+    expect.equal(string_of_score(Forty(fortyThirty)),"Forty (40) for Player One, Player Two get Thirty (30)")
+  });
+  test("string_of_score for Deuce return deuce", ({expect}) => {
+    expect.equal(string_of_score(Deuce),"Deuce !")
+  });
+  test("string_of_score for Advantage return the advantage of player 2", ({expect}) => {
+    expect.equal(string_of_score(Advantage(PlayerTwo)),"Advantage Player Two !")
+  });
+  test("string_of_score for Game return the game of player 1", ({expect}) => {
+    expect.equal(string_of_score(Game(PlayerOne)),"Game Player One !")
+  });
+});
+
